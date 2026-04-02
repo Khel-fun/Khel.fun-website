@@ -74,6 +74,8 @@ const BentoCard = ({ src, title, description, players = "1-4", status = "LIVE", 
   const dotColor = isLive ? "bg-green-400" : "bg-yellow-400";
   const videoRef = useRef(null);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
+
   useEffect(() => {
     const m = window.matchMedia('(prefers-reduced-motion: reduce)');
     const update = () => setPrefersReducedMotion(m.matches);
@@ -144,18 +146,28 @@ const BentoCard = ({ src, title, description, players = "1-4", status = "LIVE", 
             </p>
           )}
 
-          {/* Enhanced Play Button with smooth animations */}
-          <button
-            onClick={handleClick}
-            disabled={!isLive}
-            className={`mt-4 rounded-full border-2 border-white bg-violet-300 px-6 py-2 font-bold uppercase opacity-0 transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 ${isLive ? 'hover:bg-white hover:text-violet-300 cursor-pointer smooth-scale' : 'cursor-not-allowed opacity-70'
-              }`}
-          >
-            <span className="relative inline-flex items-center gap-2">
-              {isLive ? 'Play Now' : 'Coming Soon'}
-              {isLive && <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>}
-            </span>
-          </button>
+          {/* Enhanced Play Button with tooltip on hover when disabled */}
+          <div className="relative">
+            <button
+              onClick={handleClick}
+              disabled={!isLive}
+              onMouseEnter={() => !isLive && setShowTooltip(true)}
+              onMouseLeave={() => setShowTooltip(false)}
+              className={`mt-4 rounded-full border-2 border-white bg-violet-300 px-6 py-2 font-bold uppercase opacity-0 transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 ${isLive ? 'hover:bg-white hover:text-violet-300 cursor-pointer smooth-scale' : 'cursor-not-allowed opacity-70'
+                }`}
+            >
+              <span className="relative inline-flex items-center gap-2">
+                {isLive ? 'Play Now' : 'Coming Soon'}
+                {isLive && <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>}
+              </span>
+            </button>
+            
+            {!isLive && showTooltip && (
+              <div className="absolute left-0 top-0 -translate-y-full mb-2 bg-black/90 text-white text-xs px-3 py-1 rounded border border-violet-400/50 backdrop-blur-sm z-50 whitespace-nowrap opacity-100 transition-opacity duration-300">
+                Coming Soon
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -294,34 +306,24 @@ const Features = () => {
         </BentoTilt>
 
         {/* Enhanced Grid */}
-        <div ref={gridRef} className="grid h-[135vh] grid-cols-2 grid-rows-3 gap-7">
-          <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
+        <div ref={gridRef} className="grid h-auto md:h-[135vh] grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-7">
+          <BentoTilt className="bento-tilt_1 md:col-span-1 md:row-span-2">
             <BentoCard
               src="/videos/feature-2.mp4"
-              title="POKER"
-              description="Classic Texas Hold'em with crypto stakes - Coming Soon"
-              players="2-8"
-              status="WIP"
-            />
-          </BentoTilt>
-
-          <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
-            <BentoCard
-              src="/videos/3-patti.mp4"
-              title="3-PATTI"
-              description="Indian card game favorite with blockchain rewards"
-              players="2-6"
-              status="LIVE"
-              link="https://3-patti-nu.vercel.app/"
-            />
-          </BentoTilt>
-
-          <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
-            <BentoCard
-              src="/videos/feature-4.mp4"
-              title="TIC TAC TOE"
-              description="Quick matches, instant payouts - Coming Soon"
+              title="CARD WAR"
+              description="A fast-paced card battle game with high stakes - Play Now"
               players="2"
+              status="LIVE"
+              link="https://card-war-nine.vercel.app/"
+            />
+          </BentoTilt>
+
+          <BentoTilt className="bento-tilt_1 md:col-span-1">
+            <BentoCard
+              src="/videos/feature-3.mp4"
+              title="MINESWEEPER"
+              description="The classic logic game with a crypto twist - Coming Soon"
+              players="1"
               status="WIP"
             />
           </BentoTilt>
@@ -334,7 +336,7 @@ const Features = () => {
             </div>
           </BentoTilt>
 
-          <BentoTilt className="bento-tilt_2">
+          <BentoTilt className="bento-tilt_1 md:col-span-1">
             <video
               src="/videos/feature-5.mp4"
               loop

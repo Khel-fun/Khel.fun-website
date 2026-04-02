@@ -700,12 +700,12 @@ html {
 }
 
 /* Restore original card hover effects */
-.bento-tilt_1 {
-  @apply relative border-hsla col-span-2 overflow-hidden rounded-md transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)];
-  will-change: transform, box-shadow, border-color;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
+  .bento-tilt_1 {
+    @apply relative border-hsla md:col-span-2 overflow-hidden rounded-md transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)];
+    will-change: transform, box-shadow, border-color;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
 
 .bento-tilt_2 {
   @apply relative col-span-1 row-span-1 overflow-hidden rounded-md transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)];
