@@ -1,9 +1,7 @@
-import { FaDiscord, FaGithub, FaTwitch } from "react-icons/fa"
+import { FaTwitter} from "react-icons/fa"
 
 const links = [
-  {href: 'https://discord.com', icon: <FaDiscord />},
-  {href: 'https://github.com', icon: <FaGithub />},
-  {href: 'https://twitch.com', icon: <FaTwitch />},
+  {href: 'https://x.com/kheldotfun?s=21', icon: <FaTwitter />},
 ]
 const Footer = () => {
   return (
