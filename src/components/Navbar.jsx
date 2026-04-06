@@ -7,7 +7,7 @@ import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 import Button from "./Button";
 
-const navItems = ["ZUNNO", "CARD WAR", "MINESWEEPER", "About", "Contact"];
+const navItems = ["ZUNNO", "CARD WAR", "zkMINES", "About", "Contact"];
 
 const Navbar = () => {
   //State for toggling audio and visual indicator
@@ -117,7 +117,7 @@ const Navbar = () => {
               {navItems.map((item, index) => {
                 const isZunno = item === "ZUNNO";
                 const isCardWar = item === "CARD WAR";
-                const isMinesweeper = item === "MINESWEEPER";
+                const isZkMines = item === "zkMINES";
                 let href, target, rel;
                 
                 if (isZunno) {
@@ -134,7 +134,7 @@ const Navbar = () => {
                   rel = undefined;
                 }
                 
-                if (isMinesweeper) {
+                if (isZkMines) {
                   return (
                     <div
                       key={item}
@@ -223,7 +223,7 @@ const Navbar = () => {
               {navItems.map((item, index) => {
                 const isZunno = item === "ZUNNO";
                 const isCardWar = item === "CARD WAR";
-                const isMinesweeper = item === "MINESWEEPER";
+                const isZkMines = item === "zkMINES";
                 let href, target, rel;
                 
                 if (isZunno) {
@@ -240,7 +240,7 @@ const Navbar = () => {
                   rel = undefined;
                 }
                 
-                if (isMinesweeper) {
+                if (isZkMines) {
                   return (
                     <div
                       key={item}

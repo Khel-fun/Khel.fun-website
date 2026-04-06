@@ -321,8 +321,8 @@ const Features = () => {
           <BentoTilt className="bento-tilt_1 md:col-span-1">
             <BentoCard
               src="/videos/feature-3.mp4"
-              title="MINESWEEPER"
-              description="The classic logic game with a crypto twist - Coming Soon"
+              title="zkMINES"
+              description="The classic logic game with a zk-twist - Coming Soon"
               players="1"
               status="WIP"
             />
