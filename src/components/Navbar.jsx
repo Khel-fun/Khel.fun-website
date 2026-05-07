@@ -128,28 +128,16 @@ const Navbar = () => {
                   href = "https://card-war-nine.vercel.app/";
                   target = "_blank";
                   rel = "noopener noreferrer";
+                } else if (isZkMines) {
+                  href = "https://zkmines.vercel.app/";
+                  target = "_blank";
+                  rel = "noopener noreferrer";
                 } else {
                   href = `#${item.toLowerCase().replace(/\s+/g, '-')}`;
                   target = "_self";
                   rel = undefined;
                 }
                 
-                if (isZkMines) {
-                  return (
-                    <div
-                      key={item}
-                      className="nav-hover-btn-enhanced opacity-50 cursor-not-allowed group/nav-item relative"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      <span className="nav-link-text">{item}</span>
-                      {/* Tooltip for desktop */}
-                      <div className="absolute left-1/2 -bottom-10 -translate-x-1/2 scale-0 group-hover/nav-item:scale-100 transition-transform duration-200 bg-black/90 text-white text-[10px] px-2 py-1 rounded border border-violet-400/50 whitespace-nowrap z-50">
-                        Coming Soon
-                      </div>
-                    </div>
-                  );
-                }
-
                 return (
                   <a
                     key={item}
@@ -234,25 +222,16 @@ const Navbar = () => {
                   href = "https://card-war-nine.vercel.app/";
                   target = "_blank";
                   rel = "noopener noreferrer";
+                } else if (isZkMines) {
+                  href = "https://zkmines.vercel.app/";
+                  target = "_blank";
+                  rel = "noopener noreferrer";
                 } else {
                   href = `#${item.toLowerCase().replace(/\s+/g, '-')}`;
                   target = "_self";
                   rel = undefined;
                 }
                 
-                if (isZkMines) {
-                  return (
-                    <div
-                      key={item}
-                      className="px-4 py-3 text-blue-50/50 uppercase font-general text-sm cursor-not-allowed flex items-center justify-between"
-                      style={{ animationDelay: `${index * 0.05}s` }}
-                    >
-                      {item}
-                      <span className="text-[10px] bg-violet-300/20 px-2 py-0.5 rounded border border-violet-300/30">SOON</span>
-                    </div>
-                  );
-                }
-
                 return (
                   <a
                     key={item}

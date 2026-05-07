@@ -322,9 +322,10 @@ const Features = () => {
             <BentoCard
               src="/videos/feature-3.mp4"
               title="zkMINES"
-              description="The classic logic game with a zk-twist - Coming Soon"
+              description="The classic logic game with a zk-twist"
               players="1"
-              status="WIP"
+              status="LIVE"
+              link="https://zkmines.vercel.app/"
             />
           </BentoTilt>
 
