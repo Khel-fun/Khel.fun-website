@@ -7,7 +7,7 @@ import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 import Button from "./Button";
 
-const navItems = ["ZUNNO", "CARD WAR", "zkMINES", "About", "Contact"];
+const navItems = ["ZUNNO", "CARD WAR", "zkMINES", "Speed-o-light", "About", "Contact"];
 
 const Navbar = () => {
   //State for toggling audio and visual indicator
@@ -118,6 +118,7 @@ const Navbar = () => {
                 const isZunno = item === "ZUNNO";
                 const isCardWar = item === "CARD WAR";
                 const isZkMines = item === "zkMINES";
+                const isSpeedOLight = item === "Speed-o-light";
                 let href, target, rel;
                 
                 if (isZunno) {
@@ -130,6 +131,10 @@ const Navbar = () => {
                   rel = "noopener noreferrer";
                 } else if (isZkMines) {
                   href = "https://zkmines.vercel.app/";
+                  target = "_blank";
+                  rel = "noopener noreferrer";
+                } else if (isSpeedOLight) {
+                  href = "https://speed-o-light.vercel.app/";
                   target = "_blank";
                   rel = "noopener noreferrer";
                 } else {
@@ -212,6 +217,7 @@ const Navbar = () => {
                 const isZunno = item === "ZUNNO";
                 const isCardWar = item === "CARD WAR";
                 const isZkMines = item === "zkMINES";
+                const isSpeedOLight = item === "Speed-o-light";
                 let href, target, rel;
                 
                 if (isZunno) {
@@ -224,6 +230,10 @@ const Navbar = () => {
                   rel = "noopener noreferrer";
                 } else if (isZkMines) {
                   href = "https://zkmines.vercel.app/";
+                  target = "_blank";
+                  rel = "noopener noreferrer";
+                } else if (isSpeedOLight) {
+                  href = "https://speed-o-light.vercel.app/";
                   target = "_blank";
                   rel = "noopener noreferrer";
                 } else {
