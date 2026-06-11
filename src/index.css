@@ -679,24 +679,36 @@ html {
   overflow: hidden;
 }
 
-.imagesdiv img.sky,
+/* sky: oversized + centered bleed to cover corners during rotation */
+.imagesdiv img.sky {
+  position: absolute !important;
+  left: -20% !important;
+  top: -20% !important;
+  width: 140% !important;
+  height: 140% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  transform-origin: center center;
+}
+
+/* bg: simple full-cover, centered — GSAP handles zoom from 50% 50% */
 .imagesdiv img.bg {
   position: absolute !important;
-  /* expand slightly and nudge to the top-left so the image fills and covers corners */
-  left: 0% !important;
-  top: -6% !important;
-  width: 140% !important;
-  height: auto !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover !important;
-  object-position: left top !important; /* anchor to top-left */
+  object-position: center !important;
   display: block !important;
-  transform-origin: left top;
+  transform-origin: center center;
 }
 
 .imagesdiv img.character {
   /* keep character sizing/positioning but ensure it doesn't introduce layout gaps */
   max-width: 100vw;
   height: auto;
+  
 }
 
 /* Restore original card hover effects */

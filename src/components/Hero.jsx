@@ -29,7 +29,7 @@ const Hero = () => {
 
     // Initial state setup: start cinematic (zoomed + tilted) but only via GSAP
     // We avoid static rotate/scale classes in the DOM and animate from these
-    gsap.set([".sky", ".bg", ".character", ".text"], {
+    gsap.set([".sky", ".bg", ".character", ".text", ".powered-by"], {
       opacity: 0,
     });
 
@@ -42,7 +42,7 @@ const Hero = () => {
 
     // Give sky/bg/character/text initial zoom/rotation values (will animate to identity)
     gsap.set(".sky", { scale: 1.3, rotate: -15, transformOrigin: "50% 50%" });
-    gsap.set(".bg", { scale: 2, rotate: -3, transformOrigin: "50% 50%" });
+    gsap.set(".bg", { scale: 1, rotate: 0, transformOrigin: "100% 100%" });
     // reduce character base size by ~20% (scale multiplier 0.8)
     gsap.set(".character", {
       bottom: "-100%",
@@ -104,7 +104,7 @@ const Hero = () => {
 
     // Animate from cinematic start into the final upright panorama
     tl.to(".main", {
-      scale: 1,
+      scale: 1.05,
       rotate: 0,
       duration: 1.5,
       ease: "expo.out",
@@ -113,20 +113,29 @@ const Hero = () => {
         ".sky",
         {
           opacity: 1,
-          scale: 1,
+          scale: 1.5,
           rotate: 0,
-          duration: 1.2,
-          ease: "power2.inOut",
+          duration: 0.8,
+          ease: "power2.out",
+          transformOrigin: "50% 50%",
         },
         "-=1.2"
+      )
+      .to(
+        ".sky",
+        {
+          scale: 1.1,
+          duration: 0.8,
+          ease: "power2.inOut",
+          transformOrigin: "50% 50%",
+        },
+        "-=0.4"
       )
       .to(
         ".bg",
         {
           opacity: 1,
-          scale: 1,
-          rotate: 0,
-          duration: 1.2,
+          duration: 0.8,
           ease: "power2.inOut",
         },
         "-=1"
@@ -135,9 +144,9 @@ const Hero = () => {
         ".character",
         {
           opacity: 1,
-          scale: 0.72, // reduced by ~20% from 0.9 -> 0.72
+          scale: 0.72,
           x: "-50%",
-          bottom: "-15%", // raise a bit to avoid cut-off and reduce top black gap
+          bottom: window.innerWidth < 768 ? "-5%" : "-18%",
           rotate: 0,
           duration: 1.5,
           ease: "back.out(1.2)",
@@ -154,10 +163,18 @@ const Hero = () => {
           ease: "back.out(1.4)",
         },
         "-=1"
+      )
+      .to(
+        ".powered-by",
+        {
+          opacity: 1,
+          duration: 1,
+        },
+        "-=0.5"
       );
 
-    // Add parallax effect on scroll
-    gsap.to([".sky", ".bg"], {
+    // Add parallax effect on scroll (sky only; bg stays fixed to avoid edge gaps during zoom)
+    gsap.to(".sky", {
       yPercent: 30,
       ease: "none",
       scrollTrigger: {
@@ -187,14 +204,15 @@ const Hero = () => {
       delay: 2.5,
     });
 
+    // bg: gentle zoom in and back to 1x, always covering the full hero
     gsap.to(".bg", {
-      scale: 2,
-      xPercent: 0,
-      duration: 28,
+      scale: 1.2,
+      duration: 8,
       ease: "sine.inOut",
       yoyo: true,
       repeat: -1,
-      delay: 2.5,
+      delay: 1,
+      transformOrigin: "100% 50%",
     });
 
     // Very slight main container motion to keep panorama feeling alive
@@ -236,7 +254,7 @@ const Hero = () => {
       {showContent && (
         <>
           <div
-            className="main w-full"
+            className="main w-full h-screen overflow-hidden"
             ref={mainRef}
           >
             <div className="landing overflow-hidden relative w-full h-screen bg-transparent">
@@ -244,17 +262,17 @@ const Hero = () => {
               {/* Images Container */}
               <div className="imagesdiv relative overflow-hidden w-full h-screen">
                 {/* Sky Background */}
-                <img
-                  className="absolute sky top-0 left-0 w-full h-full object-cover"
+                {/* <img
+                  className="absolute sky top-0 left-0 w-screen h-full object-cover"
                   src="/bg.png"
                   alt="Sky background"
-                />
+                /> */}
 
                 {/* Main Background */}
                 <img
-                  className="absolute bg top-0 left-0 w-full h-full object-cover"
+                  className="bg"
                   src="/bg.png"
-                  alt="Main background"
+                  alt="Main background" 
                 />
 
                 {/* Hero Text */}
@@ -262,10 +280,22 @@ const Hero = () => {
 
                 {/* Character */}
                 <img
-                  className="absolute character -bottom-[100%] left-1/2 -translate-x-1/2"
+                  className="absolute character"
                   src="/girl.png"
                   alt="Main character"
                 />
+
+                {/* Powered by zkVerify */}
+                {/* <div className="absolute bottom-10 left-10 z-30 flex flex-col items-start gap-1 powered-by">
+                  <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-white">
+                    Powered by
+                  </span>
+                  <img
+                    src="/zkVerify.svg"
+                    alt="zkVerify Logo"
+                    className="h-8 w-auto object-contain opacity-100 brightness-0 invert"
+                  />
+                </div> */}
               </div>
 
               <BottomBar />

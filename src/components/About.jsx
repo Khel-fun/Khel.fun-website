@@ -401,7 +401,7 @@ const About = () => {
       <div className="relative mb-8 mt-16 flex flex-col items-center gap-4">
         <div className="flex items-center gap-6">
           <div className="h-[2px] w-32 bg-gradient-to-r from-transparent via-violet-300 to-transparent" />
-          <span ref={titleRef} className="font-mono text-lg md:text-xl uppercase tracking-[0.4em] text-violet-300 px-6">
+          <span ref={titleRef} className="font-mono text-sm md:text-xl uppercase tracking-[0.4em] text-violet-300 md:px-6">
             The Game
           </span>
           <div className="h-[2px] w-32 bg-gradient-to-r from-transparent via-violet-300 to-transparent" />
@@ -420,7 +420,7 @@ const About = () => {
         <p className="max-w-2xl text-center font-circular-web text-lg text-black/70">
           Fair-play, fully verified by
         </p>
-        <img src="/zkVerify.svg" alt="zkVerify" className="w-36 h-36" />
+        <img src="/zkVerify.svg" alt="zkVerify" className="w-36 h-20" />
         </div>
       </div>
 

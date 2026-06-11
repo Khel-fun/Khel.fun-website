@@ -25,9 +25,9 @@ export default function useMouseParallax(
             const skyX = nx * 12;
             const bgX = nx * 20;
 
-            gsap.to('.main .text', { x: `${textX}%`, duration: 0.9, overwrite: true });
-            gsap.to('.sky', { x: `${skyX}px`, duration: 0.9, overwrite: true });
-            gsap.to('.bg', { x: `${bgX}px`, duration: 0.9, overwrite: true });
+            gsap.to('.main .text', { x: `${textX}%`, duration: 0.9, overwrite: "auto" });
+            gsap.to('.sky', { x: `${skyX}px`, duration: 0.9, overwrite: "auto" });
+            gsap.to('.bg', { x: `${bgX}px`, duration: 0.9, overwrite: "auto" });
         };
 
         const onPointerMove = (e: PointerEvent) => {
@@ -43,7 +43,7 @@ export default function useMouseParallax(
         container.addEventListener('mousemove', onPointerMove as EventListener, { passive: true } as AddEventListenerOptions);
 
         const onLeave = () => {
-            gsap.to(['.main .text', '.sky', '.bg'], { x: 0, duration: 0.8, overwrite: true });
+            gsap.to(['.main .text', '.sky', '.bg'], { x: 0, duration: 0.8, overwrite: "auto" });
         };
 
         container.addEventListener('pointerleave', onLeave);
