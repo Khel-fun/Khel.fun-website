@@ -398,7 +398,7 @@ const About = () => {
 
   return (
     <div id="about" className="w-screen relative z-10">
-      <div className="relative mb-8 mt-16 flex flex-col items-center gap-5">
+      <div className="relative mb-8 mt-16 flex flex-col items-center gap-4">
         <div className="flex items-center gap-6">
           <div className="h-[2px] w-32 bg-gradient-to-r from-transparent via-violet-300 to-transparent" />
           <span ref={titleRef} className="font-mono text-lg md:text-xl uppercase tracking-[0.4em] text-violet-300 px-6">
@@ -415,6 +415,13 @@ const About = () => {
         <p className="max-w-2xl text-center font-circular-web text-lg text-black/70">
           Where blockchain meets arcade nostalgia. Prove your skills, earn rewards, dominate the leaderboard.
         </p>
+
+        <div className="flex items-center gap-4">
+        <p className="max-w-2xl text-center font-circular-web text-lg text-black/70">
+          Fair-play, fully verified by
+        </p>
+        <img src="/zkVerify.svg" alt="zkVerify" className="w-36 h-36" />
+        </div>
       </div>
 
       <div className="h-screen w-screen" id="clip">
