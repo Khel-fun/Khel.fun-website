@@ -41,13 +41,13 @@ const Contact = () => {
             className="special-font !md:text-[6.2rem] w-full font-zentry !text-5xl !font-black !leading-[.9]"
           />
 
-          <Button
+          {/* <Button
             title="GG IRL"
             containerClass="mt-10 cursor-pointer"
             variant="neon"
             href="#about"
             ariaLabel="See how to get involved"
-          />
+          /> */}
         </div>
       </div>
     </section>

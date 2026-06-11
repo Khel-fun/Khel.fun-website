@@ -146,7 +146,7 @@ const Hero = () => {
           opacity: 1,
           scale: 0.72,
           x: "-50%",
-          bottom: window.innerWidth < 768 ? "-5%" : "-18%",
+          bottom: window.innerWidth < 768 ? "-5%" : "-20%",
           rotate: 0,
           duration: 1.5,
           ease: "back.out(1.2)",

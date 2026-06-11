@@ -340,7 +340,7 @@ const Features = () => {
             />
           </BentoTilt>
 
-          <BentoTilt className="bento-tilt_1 md:col-span-1">
+          <BentoTilt className="bento-tilt_2 md:col-span-1">
             <video
               src="/videos/feature-5.mp4"
               loop

@@ -2,7 +2,7 @@ import { useRef } from "react";
 import AnimatedTitle from "./AnimatedTitle";
 import gsap from "gsap";
 import RoundedCorners from "./RoundedCorners";
-import Button from "./Button"
+import Button from "./Button";
 const Story = () => {
   const frameRef = useRef(null);
 
@@ -45,24 +45,35 @@ const Story = () => {
       <div className="flex size-full flex-col items-center py-10 pb-24">
         <div className="relative size-full">
           <AnimatedTitle
-            title="ONCHAIN GAMING X PROOF OF PLAY"
+            title="Provably fair onchain gameplay"
             sectionId="#story"
             containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
           />
+          {/* <AnimatedTitle
+            title="powered by"
+            sectionId="#story"
+            containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
+          /> */}
 
           <div className="story-img-container">
             <div className="story-img-mask">
-              <div className="story-img-content">
-                <img
-                  src="/img/entrance.webp"
-                  alt="entrance"
-                  className="object-contain"
-                  ref={frameRef}
-                  onMouseLeave={handleMouseLeave}
-                  onMouseUp={handleMouseLeave}
-                  onMouseEnter={handleMouseLeave}
-                  onMouseMove={handleMouseMove}
-                />
+              <div className="story-img-content w-screen">
+                <a
+                  href="https://zkverify.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/khel-zkv.png"
+                    alt="entrance"
+                    className="object-contain scale-110"
+                    ref={frameRef}
+                    onMouseLeave={handleMouseLeave}
+                    onMouseUp={handleMouseLeave}
+                    onMouseEnter={handleMouseLeave}
+                    onMouseMove={handleMouseMove}
+                  />
+                </a>
               </div>
             </div>
             <RoundedCorners />
@@ -70,9 +81,12 @@ const Story = () => {
         </div>
 
         <div className="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
-            <div className="flex h-full w-fit flex-col items-center md:items-start">
-                <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start ">Experience the perfect blend of traditional arcade fun with Blockchain transparency.</p>
-            </div>
+          <div className="flex h-full w-fit flex-col items-center md:items-start">
+            <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start ">
+              Experience the perfect blend of traditional arcade fun with
+              Blockchain transparency.
+            </p>
+          </div>
         </div>
       </div>
     </section>

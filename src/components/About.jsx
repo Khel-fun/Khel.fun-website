@@ -420,7 +420,9 @@ const About = () => {
         <p className="max-w-2xl text-center font-circular-web text-lg text-black/70">
           Fair-play, fully verified by
         </p>
+        <a href="https://zkverify.io/" target="_blank" rel="noopener noreferrer">
         <img src="/zkVerify.svg" alt="zkVerify" className="w-36 h-20" />
+        </a>
         </div>
       </div>
 
