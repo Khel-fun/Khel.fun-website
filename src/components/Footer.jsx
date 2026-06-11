@@ -41,9 +41,9 @@ const Footer = () => {
         
         {/* Copyright and Links */}
         <div className="flex flex-col items-center gap-2 text-center md:items-end md:text-right">
-          <p className='text-sm font-bold'>
+          {/* <p className='text-sm font-bold'>
             &copy; Drongo Games 2025
-          </p>
+          </p> */}
           <div className="flex gap-4 text-xs">
             <a href="#privacy-policy" className="opacity-70 hover:underline hover:opacity-100">
               Privacy Policy
