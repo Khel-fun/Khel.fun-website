@@ -14,10 +14,10 @@ const Footer = () => {
       <div className='container relative z-10 mx-auto flex flex-col items-center justify-between gap-6 px-4 md:flex-row'>
         {/* Logo Section */}
         <div className="flex items-center gap-4">
-          <img src="/logo.png" alt="Khel.fun" loading="lazy" className="h-12 w-24" />
+          <img src="/logo.png" alt="Khel.fun" loading="lazy" className="h-16 w-28" />
           <div>
-            <p className='font-zentry text-2xl font-bold'>KHEL.FUN</p>
-            <p className="text-xs opacity-70">Onchain Gaming Platform</p>
+            {/* <p className='font-zentry text-2xl font-bold'>KHEL.FUN</p> */}
+            {/* <p className="text-sm font-semibold opacity-70">Onchain Gaming Platform</p> */}
           </div>
         </div>
         
