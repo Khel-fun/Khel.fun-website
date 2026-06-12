@@ -14,7 +14,7 @@ const Footer = () => {
       <div className='container relative z-10 mx-auto flex flex-col items-center justify-between gap-6 px-4 md:flex-row'>
         {/* Logo Section */}
         <div className="flex items-center gap-4">
-          <img src="/img/logo.png" alt="Khel.fun" loading="lazy" className="h-12 w-12" />
+          <img src="/logo.png" alt="Khel.fun" loading="lazy" className="h-12 w-24" />
           <div>
             <p className='font-zentry text-2xl font-bold'>KHEL.FUN</p>
             <p className="text-xs opacity-70">Onchain Gaming Platform</p>

@@ -64,7 +64,7 @@ const Story = () => {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="/khel-zkv.png"
+                    src="/zkverify-card.png"
                     alt="entrance"
                     className="object-contain scale-110"
                     ref={frameRef}

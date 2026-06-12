@@ -87,19 +87,19 @@ const Navbar = () => {
             <div className="group relative flex items-center gap-3">
               <div className="relative">
                 <img 
-                  src="/img/logo.png" 
+                  src="/logo.png" 
                   alt="Khel.fun logo" 
                   loading="lazy"
-                  className="w-12 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" 
+                  className="w-16 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" 
                 />
                 {/* Glow effect on logo */}
                 <div className="absolute inset-0 -z-10 blur-xl bg-violet-300/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </div>
               
               {/* Brand name - hidden on mobile */}
-              <span className="hidden lg:block font-zentry text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-blue-300 to-violet-300 animate-pulse-slow hide-during-intro">
+              {/* <span className="hidden lg:block font-zentry text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-blue-300 to-violet-300 animate-pulse-slow hide-during-intro">
                 KHEL.FUN
-              </span>
+              </span> */}
             </div>
 
             <Button
